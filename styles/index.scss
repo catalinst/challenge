@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+// Colors
+$white: #ffffff;
+$gray: #D6D6D6;
+$black: #000000;
+
+$light-text: #858585;
+$dark-text: #424242;
+
+$light-blue: #155BCC;
+$dark-blue: #164FAC;
+
+$accent: #2FDA7F;
+$background: #FAFAFA;
+$search: #F5F5F5;
+
+// Fonts
+$main-font: 'Roboto';
+$second-font: 'Lato';
+$main-weight: 300;
+
+@mixin text(
+    $font-size,
+    $line-height,
+    $font-weight,
+    $color: $light-text,
+    $text-transform: none,
+    $opacity: 1,
+    $important: false
+) {
+    @if $important == true {
+        font-size: $font-size !important;
+        font-weight: $font-weight !important;
+        opacity: $opacity !important;
+        text-transform: $text-transform !important;
+        line-height: $line-height !important;
+        color: $color !important;
+    }
+    @if $important == false {
+        font-size: $font-size;
+        font-weight: $font-weight;
+        opacity: $opacity;
+        text-transform: $text-transform;
+        line-height: $line-height;
+        color: $color;
+    }
+}
+
+@mixin flex($justify-content, $align-items, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}

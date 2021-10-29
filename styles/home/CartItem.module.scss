@@ -1,0 +1,75 @@
+@import './../index';
+
+.container {
+    @include flex(unset, unset, column);
+    @include text(1rem, 1.5rem, 500, $white);
+    background-color: $light-blue;
+    width: 100%;
+    max-width: 16rem;
+    padding: 1.25rem;
+    row-gap: 1.5rem;
+    margin-right: 3rem;
+
+    .contact {
+        @include flex(flex-start, center);
+    }
+
+    .description {
+        @include text(0.75rem, 1rem, 400, $gray);
+    }
+
+    .cart {
+        @include flex(flex-start, center);
+
+        div {
+            margin-right: 0.5rem;
+        }
+    }
+
+    .items {
+        border: 1px dashed $white;
+        min-height: 8rem;
+        @include flex(center, center);
+        padding: 0.5rem;
+
+        .empty {
+            @include text(1rem, 1rem, unset, $gray);
+        }
+
+        .list {
+            align-self: start;
+            margin: 0 auto 0 0;
+            width: 100%;
+
+            .item {
+                @include flex(unset, unset);
+                padding: 0.5rem 0.5rem;
+                background-color: $dark-blue;
+                margin-bottom: 0.5rem;
+
+                .price {
+                    margin-right: 0.5rem;
+                    color: $accent;
+                }
+
+                .title {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+
+    img {
+        width: 2rem;
+        margin-right: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,38 @@
+@import './../index';
+
+.container {
+    @include flex(unset, unset, column);
+    width: 100%;
+    max-width: 14rem;
+    cursor: pointer;
+    box-shadow: 0 0 6px gray;
+
+    .logo {
+        max-height: 16rem;
+        width: 100%;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .text {
+        background-color: $white;
+        padding: 8%;
+
+        .title {
+            @include text(1.25rem, 1.5rem, 500, $dark-text);
+            min-height: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .description {
+            @include text(0.75rem, 1.25rem, unset, $light-text);
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
